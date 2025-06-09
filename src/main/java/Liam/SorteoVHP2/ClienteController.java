@@ -23,7 +23,6 @@ public class ClienteController {
         model.addAttribute("cliente", new Cliente());
         return "formulario";
     }
-
     @PostMapping("/clientes")
     public String guardarCliente(@ModelAttribute("cliente") @Valid Cliente cliente, BindingResult result) {
         if (result.hasErrors()) {
@@ -34,6 +33,7 @@ public class ClienteController {
             return "formulario";
         }
         clienteRepository.save(cliente);
-        return "redirect:/formulario?exito";
+        return "redirect:http://victorpetrucciosh.mitiendanube.com";
     }
+
 }
