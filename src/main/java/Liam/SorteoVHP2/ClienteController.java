@@ -1,5 +1,4 @@
 package Liam.SorteoVHP2;
-
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,6 +11,12 @@ public class ClienteController {
 
     @Autowired
     private ClienteRepository clienteRepository;
+
+    // Mapea la raíz "/" y redirige al formulario
+    @GetMapping("/")
+    public String inicio() {
+        return "redirect:/formulario";
+    }
 
     @GetMapping("/formulario")
     public String mostrarFormulario(Model model) {
