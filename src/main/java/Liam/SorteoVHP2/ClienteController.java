@@ -33,7 +33,6 @@ public class ClienteController {
             return "formulario";
         }
         clienteRepository.save(cliente);
-        return "redirect:http://victorpetrucciosh.mitiendanube.com";
+        return "redirect:/formulario?exito=true"; // 👈 Redirige al formulario con éxito
     }
-
 }
